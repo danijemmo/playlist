@@ -1,24 +1,51 @@
-const express = require("express")
-const router = express.Router()
+const express = require("express");
+const router = express.Router();
+const { Playlist } = require("../module/playlist");
 
-router.get('/',(req,res)=>{
-    res.send('all playlist')
-})
+router.get("/", async (req, res) => {
+  const playlist = await Playlist.find({});
 
-router.get('/:id',(req,res)=>{
-    res.send('song by id')
-})
+  res.send(playlist);
+});
 
-router.post('/',(req,res)=>{
-    res.send('post song')
-})
+router.get("/:id", async (req, res) => {
+  const playlist = await Playlist.findById(req.params.id);
 
-router.put('/:id',(req,res)=>{
-    res.send('update song')
-})
+  res.send(playlist);
+});
 
-router.delete('/:id',(req,res)=>{
-    res.send('delete song')
-})
+router.post("/new", async (req, res) => {
+  const playlist = new Playlist({
+    author: req.body.author,
+    musicTitle: req.body.musicTitle,
+    publishedDate: req.body.publishedDate,
+  });
+  await playlist.save();
+
+  if (!playlist) return res.status(404).send("there is no song by this Id");
+
+  res.send(playlist);
+});
+
+router.put("/update/:id", async (req, res) => {
+  const playlist = await Playlist.findByIdAndUpdate(
+    req.params.id,
+    {
+      author: req.body.author,
+      musicTitle: req.body.musicTitle,
+      publishedDate: req.body.publishedDate,
+    },
+    { new: true }
+  );
+
+  if (!playlist) return res.status(404).send("there is no song by this Id");
+  res.send(playlist);
+});
+
+router.delete("/:id", async (req, res) => {
+  const playlist = await Playlist.findByIdAndRemove(req.params.id);
+
+  res.send(playlist);
+});
 
 module.exports = router;

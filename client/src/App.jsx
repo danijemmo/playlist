@@ -1,9 +1,12 @@
 import React from "react";
-
+import Navbar from "./Navbar";
+import Home from "./Home"
 export default function App() {
+
   return (
-    <div className="">
-      <p className="text-3xl font-bold text-center">Playlist</p>
+    <div>
+      <Navbar />
+      <Home />
     </div>
   );
 }
