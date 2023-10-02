@@ -9,7 +9,7 @@ const playlist = require('./router/playlist')
 app.use(cors())
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use('/api/playlist',playlist)
+app.use('/songs',playlist)
 
 mongoose
   .connect(process.env.DATABASE_URL)

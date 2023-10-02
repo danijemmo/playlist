@@ -1,4 +1,6 @@
 const mongoose = require("mongoose");
+const Joi = require('joi')
+Joi.objectID =require('joi-objectid')(Joi)
 
 const playlistSchema = new mongoose.Schema({
     author:{
@@ -17,4 +19,14 @@ const playlistSchema = new mongoose.Schema({
 
 const Playlist = mongoose.model('Playlist',playlistSchema)
 
-module.exports.Playlist = Playlist
+function validator(song){
+    const schema ={
+        author:Joi.string().required(),
+        musicTitle:Joi.string().required(),
+        publishedDate:Joi.date().required(),
+    }
+    return Joi.validate(song,schema)
+}
+
+exports.validator = validator
+exports.Playlist = Playlist
