@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:3000/songs";
+const BASE_URL = "https://playlist-la80.onrender.com/songs";
 
 //get songs
 export const getSongs = async () => {

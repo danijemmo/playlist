@@ -13,14 +13,9 @@ export default function NewSong() {
   const { isLoading } = useSelector((state) => state.songs);
   const dispatch = useDispatch();
 
-  const refreshPage = () => {
-    window.location.reload(false);
-  };
-
   const handelSubmit = () => {
     const song = { author, musicTitle, publishedDate };
     dispatch({ type: "songs/createSongFetch", payload: { songs: song } });
-    refreshPage();
     toast.success("song Add successfully");
   };
   return (

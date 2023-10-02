@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
@@ -21,13 +20,11 @@ export default function songList({ songs }) {
   const dispatch = useDispatch();
 
   const handleDelete = (songId) => {
-    useEffect(()=>{
       if (window.confirm("are you sure you want to delete ?")) {
         dispatch({ type: "songs/deleteSongFetch", payload: { id: songId } });
         refreshPage();
         toast.success("song deleted successfully");
       }
-    },[dispatch])
   };
 
   return (

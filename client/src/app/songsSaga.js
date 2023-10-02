@@ -41,7 +41,7 @@ function* deleteSongAction(action) {
 
 function* updateSongAction(action){
   try {
-    const response = yield call(()=>fetch(`http://localhost:3000/songs/${action.payload.id}`,{
+    const response = yield call(()=>fetch(`https://playlist-la80.onrender.com/songs${action.payload.id}`,{
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
