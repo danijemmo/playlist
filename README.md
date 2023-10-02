@@ -1,6 +1,6 @@
 # Addis Software Test Project
 
-This is a test project for Addis Software Internship Programm. it's purpose is to perform CRUD operation Using React, Redux, Redux-Saga, styled components and Node.
+This Project is a React Test Project for Addis Software. It is a simple React App that shows how to use React, Redux, Redux-Saga and Styled Components.
 
 ## Technologies
 #### Front-End
