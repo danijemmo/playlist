@@ -43,6 +43,15 @@ You can access the Project using this [link Project Link](vercel).
    ```
 7. copy the url from the terminal and past it in your Browser
 
+## Screenshots
+   #### song List
+![song List](https://github.com/danijemmo/playlist/blob/main/client/public/screenshots/list%20of%20songs.png?raw=true)
+#### Song deatils
+![Song deatils](https://github.com/danijemmo/playlist/blob/main/client/public/screenshots/song%20details.png?raw=true)
+#### add song
+![add song](https://github.com/danijemmo/playlist/blob/main/client/public/screenshots/add%20song.png?raw=true)
+#### update song
+![update song](https://github.com/danijemmo/playlist/blob/main/client/public/screenshots/update%20song.png?raw=true)
 
 ## Authors
   👤 Daniel Jemmo
