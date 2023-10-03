@@ -27,7 +27,7 @@ router.post("/new", async (req, res) => {
   const playlist = new Playlist({
     author: req.body.author,
     musicTitle: req.body.musicTitle,
-    publishedDate: req.body.publishedDate,
+    publishedDate: new Date(req.body.publishedDate).toISOString().split('T')[0],
   });
   await playlist.save();
 
@@ -45,7 +45,7 @@ router.put("/:id", async (req, res) => {
     {
       author: req.body.author,
       musicTitle: req.body.musicTitle,
-      publishedDate: new Date(req.body.publishedDate),
+      publishedDate: new Date(req.body.publishedDate).toISOString().split('T')[0],
     },
     { new: true }
   );
