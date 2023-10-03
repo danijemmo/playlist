@@ -16,11 +16,6 @@ This Project is a React Test Project for Addis Software. It is a simple React Ap
 - MongoDB
 - Mongoose
 ```
-
-## Project Links
-
-You can access the Project using this [link Project Link](vercel).
-
 ## Installation
 
 1. Clone This Repositary.
@@ -43,7 +38,7 @@ You can access the Project using this [link Project Link](vercel).
    ```
 7. copy the url from the terminal and past it in your Browser
 
-## Screenshots
+## Project Screenshots
    #### song List
 ![song List](https://github.com/danijemmo/playlist/blob/main/client/public/screenshots/list%20of%20songs.png?raw=true)
 #### Song deatils
