@@ -6,7 +6,7 @@ import { NewSongStyle } from "../styles/NewSongStyle";
 export default function Update() {
   const { id } = useParams();
 
-  const [author, setAuthor] = useState();
+  const [artist, setArtist] = useState();
   const [musicTitle, setMusicTitle] = useState("");
   const [publishedDate, setPublishedDate] = useState("");
 
@@ -18,7 +18,7 @@ export default function Update() {
 
   const handelUpdate = (e)=>{
     e.preventDefault();
-    const song = {author, musicTitle, publishedDate}
+    const song = {artist, musicTitle, publishedDate}
     if (window.confirm("are you sure you want to update ?")) {
       dispatch({type:'songs/updateSongFetch', payload:{id:id, songs: song}})
       navigate('/')
@@ -34,13 +34,13 @@ export default function Update() {
       <NewSongStyle>
       <h1>Update Song</h1>
       <form onSubmit={handelUpdate}>
-        <label htmlFor="">Author</label>
+        <label htmlFor="">artist</label>
         <input
           type="text"
           required
-          placeholder={singleSong.author}
-          value={author}
-          onChange={(e) => setAuthor(e.target.value)}
+          placeholder={singleSong.artist}
+          value={artist}
+          onChange={(e) => setArtist(e.target.value)}
         />
         <label htmlFor="">music Title</label>
         <input

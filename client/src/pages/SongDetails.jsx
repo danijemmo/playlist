@@ -20,7 +20,7 @@ export default function SongDetails() {
         {isLoading && <div>Loading...</div>}
         <div className="y">{error} </div>
         <h1>song detail - {singleSong.musicTitle}</h1>
-        <p>Artist Name: {singleSong.author}</p>
+        <p>Artist Name: {singleSong.artist}</p>
         <p>Music Title: {singleSong.musicTitle}</p>
         <p>this song is released in {singleSong.publishedDate}</p>
       </SongDetailStyle>

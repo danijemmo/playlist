@@ -6,7 +6,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default function NewSong() {
-  const [author, setAuthor] = useState("");
+  const [artist, setArtist] = useState("");
   const [musicTitle, setMusicTitle] = useState("");
   const [publishedDate, setPublishedDate] = useState("");
 
@@ -14,7 +14,7 @@ export default function NewSong() {
   const dispatch = useDispatch();
 
   const handelSubmit = () => {
-    const song = { author, musicTitle, publishedDate };
+    const song = { artist, musicTitle, publishedDate };
     dispatch({ type: "songs/createSongFetch", payload: { songs: song } });
     toast.success("song Add successfully");
   };
@@ -24,12 +24,12 @@ export default function NewSong() {
       <NewSongStyle>
         <h1>Add Song</h1>
         <form onSubmit={handelSubmit}>
-          <label htmlFor="">Author</label>
+          <label htmlFor="">artist</label>
           <input
             type="text"
             required
-            value={author}
-            onChange={(e) => setAuthor(e.target.value)}
+            value={artist}
+            onChange={(e) => setArtist(e.target.value)}
           />
           <label htmlFor="">music Title</label>
           <input

@@ -36,7 +36,7 @@ export default function songList({ songs }) {
             <div>
               <List>
                 <Link to={`/songs/${song._id}`}>
-                  <p>{song.author}</p>
+                  <p>{song.artist}</p>
                   <p>{song.musicTitle}</p>
                   <p>{song.publishedDate}</p>
                   <img src={song.coverImagePath} alt="" />

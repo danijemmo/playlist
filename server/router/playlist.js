@@ -25,7 +25,7 @@ router.post("/new", async (req, res) => {
   if (error) return res.status(400).send(error.details[0].message);
 
   const playlist = new Playlist({
-    author: req.body.author,
+    artist: req.body.artist,
     musicTitle: req.body.musicTitle,
     publishedDate: new Date(req.body.publishedDate).toISOString().split('T')[0],
   });
@@ -43,7 +43,7 @@ router.put("/:id", async (req, res) => {
   const playlist = await Playlist.findByIdAndUpdate(
     req.params.id,
     {
-      author: req.body.author,
+      artist: req.body.artist,
       musicTitle: req.body.musicTitle,
       publishedDate: new Date(req.body.publishedDate).toISOString().split('T')[0],
     },
